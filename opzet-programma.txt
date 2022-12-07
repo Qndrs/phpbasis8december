@@ -1,0 +1,26 @@
+opzet-programma.txt
+
+## spelidee
+- Spelletje hoger / lager
+- Iemand neemt een getal ingedachten
+- De ander mag raden
+- Na iedere beurt geeft iemand aan of je te hoog, te laag of goed geraden hebt
+- Het spelletje is klaar wanneer je goed geraden hebt
+
+## ontwikkelen als web applicatie
+Kun je dit met de webserver gaan spelen?
+- de webserver neemt een getal in gedachten (geheugen)
+- getal van 0 t/m 10 (hele getallen, inclusief)
+- na iedere doorgifte van een getal door de bezoeker (formulier in HTML) 
+  geeft de server aan hoe er geraden is:
+  - te hoog: server zegt: je moet lager raden
+  - te laag: server zegt: je moet hoger raden
+  - goed: server zegt: helemaal goed! Wil je nog een keer?
+    - ja graag: server neemt een nieuw getal in geheugen en spel begint opnieuw
+    - nee dank je: server zegt tot ziens.
+
+## meer functionaliteit
+? toekomst: - speler kan zich aanmelden
+            - spelers tegen elkaar kunnen spelen
+            - scoreboard wordt bijgehouden
+            - ...

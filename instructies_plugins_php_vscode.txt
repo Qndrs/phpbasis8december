@@ -1,0 +1,26 @@
+## plugins en configuratie:
+
+## handige plugins
+Open PHP/HTML/JS In Browser (denk aan configureren)
+PHP Intelephense
+Prettier - Code formatter
+VSCode AutoSave
+
+## eventueel werken met GIThub
+GitLens — Git supercharged
+
+## vs code en php.ini configuratie
+Open php.ini (pad staat in de pagina van bestand met phpinfo() functie)
+Zoeken in bestand CTRL+f 
+Pas de regels aan:
+opcache.enable=1        wordt: opcache.enable=0
+display_errors = Off    wordt: display_errors = On
+Herstart de webserver! (apache)
+
+## VS command palette is handig! (View, Command palette)
+
+## Bestanden van het boek:
+https://kennisbron.nl/bim/
+
+Deze instructies in codepen:
+https://codepen.io/Qndrs/pen/JjZxgKq
