@@ -1,0 +1,40 @@
+Er zijn een aantal manieren waarop de functie geoptimaliseerd kan worden. Een aantal suggesties zijn:
+
+De code kan worden opgeschoond door onnodige commentaar te verwijderen en door gebruik te maken van standaard PHP-syntaxis. Bijvoorbeeld: in plaats van if (is_array($ding) || is_object($ding)) kan if (is_array($ding) || is_object($ding)) gebruikt worden.
+
+De variabele $wat kan worden verwijderd, omdat het niet gebruikt wordt in de rest van de functie.
+
+De variabele $regels kan een array zijn in plaats van een string, zodat de functie de subarrays kan toevoegen in plaats van ze te concateneren. Dit kan de prestaties en leesbaarheid van de code verbeteren.
+
+De functie kan gebruik maken van de PHP-functie array_map() om de array te itereren in plaats van een foreach-lus te gebruiken. Dit kan de leesbaarheid van de code verbeteren en de prestaties kunnen verbeterd worden, afhankelijk van de grootte van de array.
+
+Een mogelijke opgeschoonde en geoptimaliseerde versie van de functie zou er als volgt uit kunnen zien:
+
+function loopdoor($naam, $ding) {
+  // Maak een lege array
+  $regels = array();
+
+  if (is_array($ding) || is_object($ding)):
+    // Start een HTML-lijst
+    $regels[] = '<ul>';
+
+    // Maak gebruik van array_map() om de array te itereren
+    $items = array_map(function($v, $k) {
+      return loopdoor($k, $v);
+    }, $ding, array_keys($ding));
+
+    // Voeg de items toe aan de lijst
+    $regels = array_merge($regels, $items);
+
+    // Sluit de HTML-lijst
+    $regels[] = '</ul>';
+  else:
+    // Toon het element als een lijstitem
+    $regels[] = '<li><strong>'.$naam.'</strong> => '.$ding.'</li>';
+  endif;
+
+  return implode($regels);
+}
+
+
+Opmerking: deze code is slechts een voorbeeld en is niet getest. Er kunnen fouten in voorkomen en het is aanbevolen om de code te testen en eventuele fouten te corrigeren voordat het in een productieomgeving wordt gebruikt.
