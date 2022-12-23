@@ -1,0 +1,40 @@
+Dag 3! PHP basis - Robert Kuunders rk@opatel.nl
+Bestanden:
+https://github.com/Qndrs/phpbasis8december
+
+Wat gaan we doen?
+- wat hebben we gedaan?
+  - php is stateless (vergeet alles wanneer het script klaar is)
+    - cookies, sessie cookies, bestanden (file_put_contents), json
+  - vergevingsgezind (geen strict datatyping)
+  - variabelen, arrays (lijsten), lussen, condities
+  - flexibel in schrijfwijzen (aliassen en alternatieve methoden)
+  - herhaalde code: in functie
+
+Kijk maar eens bij ChatGPT
+
+Vandaag:
+ - database benadering (SQL) (relationele database MySQL / MariaDB)
+   - php manier: mysqli_  (of OOP met DBO)
+ - verwerken van tabellen -> lijsten 
+ - opzet: model, view, controller
+
+SQL:  4 belangrijke mogelijkheden
+SELECT (vragen om informatie)
+INSERT (toevoegen van informatie)
+UPDATE (wijzigen van gegevens) (linke soep)
+DELETE (verwijderen van gegevens) 
+
+
+FOUT!
+Paard toevoegen werkt niet. Geboren is een verplicht gegeven in de database.
+NIET oplossen door de database structuur aan te passen. (gegeven mag NULL zijn)
+Maar door:
+- HTML formulier (view) met datumveld
+- functie nieuwPaard moet bij de insert ook een geboren (datum) krijgen
+  - parameters
+  - query (SQL)
+  - binding 
+- paarden.php (controller) moet bij // nieuw paard in DB
+  - value uit $_POST moet als parameter worden doorgegeven aan de nieuwPaard functie
+  - moet eerst gefilterd worden
